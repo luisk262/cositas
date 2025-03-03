@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Enviar mensaje de WhatsApp sin guardar número | WhatsApp Directo</title>
+    <meta name="description" content="Envía mensajes de WhatsApp sin necesidad de guardar el número. Herramienta gratuita para escribir a cualquier número de WhatsApp directamente.">
+    <meta name="keywords" content="whatsapp directo, enviar mensaje whatsapp sin guardar número, whatsapp sin contacto, mensaje whatsapp online, chat whatsapp web, whatsapp sin agregar contacto">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WhatsApp Directo - Envía mensajes sin guardar el número">
+    <meta property="og:description" content="Herramienta gratuita para enviar mensajes de WhatsApp sin necesidad de guardar el número en tus contactos.">
+    <!-- <meta property="og:image" content="https://tu-dominio.com/whatsapp-preview.jpg"> -->
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WhatsApp Directo - Envía mensajes sin guardar el número">
+    <meta name="twitter:description" content="Herramienta gratuita para enviar mensajes de WhatsApp sin necesidad de guardar el número en tus contactos.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://putofina.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <style>
+        :root {
+            --whatsapp-green: #25D366;
+            --whatsapp-dark: #075E54;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--whatsapp-dark), var(--whatsapp-green));
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            color: var(--whatsapp-dark);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--whatsapp-green);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: var(--whatsapp-green);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            background: #1fab54;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Envía mensajes de WhatsApp sin guardar el número</h1>
+        <div class="form-group">
+            <label for="phone">Número de teléfono (con código de país)</label>
+            <input type="tel" id="phone" placeholder="Ejemplo: 34612345678" 
+                   pattern="[0-9]*" inputmode="numeric">
+        </div>
+        <div class="form-group">
+            <label for="message">Mensaje predeterminado</label>
+            <textarea id="message" placeholder="Escribe tu mensaje aquí...">Hola, me gustaría obtener más información.</textarea>
+        </div>
+        <button onclick="abrirWhatsApp()">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2M12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20M8.39 8.39C7.39 9.39 6.9 10.67 6.9 12C6.9 13.33 7.39 14.61 8.39 15.61C9.39 16.61 10.67 17.1 12 17.1C13.33 17.1 14.61 16.61 15.61 15.61L14.19 14.19C13.7 14.68 13.06 14.9 12.41 14.9C11.76 14.9 11.12 14.68 10.63 14.19C10.14 13.7 9.92 13.06 9.92 12.41C9.92 11.76 10.14 11.12 10.63 10.63C11.12 10.14 11.76 9.92 12.41 9.92C13.06 9.92 13.7 10.14 14.19 10.63L15.61 9.39C14.61 8.39 13.33 7.9 12 7.9C10.67 7.9 9.39 8.39 8.39 9.39Z"/>
+            </svg>
+            Abrir WhatsApp
+        </button>
+    </div>
+
+    <script>
+        function abrirWhatsApp() {
+            const phone = document.getElementById('phone').value.replace(/\D/g, '');
+            const message = encodeURIComponent(document.getElementById('message').value);
+
+            if (phone.length < 8) {
+                alert('Por favor, ingresa un número de teléfono válido con código de país');
+                return;
+            }
+
+            const url = `https://wa.me/${phone}?text=${message}`;
+            window.open(url, '_blank');
+        }
+
+        // Validación en tiempo real para solo permitir números
+        document.getElementById('phone').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '');
+        });
+    </script>
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "WhatsApp Directo",
+        "description": "Herramienta para enviar mensajes de WhatsApp sin guardar el número en contactos",
+        "applicationCategory": "CommunicationApplication",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+</body>
+</html>
